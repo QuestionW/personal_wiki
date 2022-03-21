@@ -1,0 +1,29 @@
+created: 20220222071931335
+creator: Roy Zheng
+modified: 20220222080056662
+modifier: Roy Zheng
+page-cover: 
+tags: Index
+title: 准备Docker
+tmap.id: 3acfe158-a08a-4319-9331-9b2562d54803
+type: text/vnd.tiddlywiki
+
+''Setup new image:''
+
+docker import gatk4_docker.tar hc-zqw:latest
+
+
+''Setup and run the docker container:''
+
+docker run --runtime=nvidia -itd --name hc-zqw --privileged=true -p 3000x:22 -v /data/:/data/ hc-zqw:latest /bin/bash
+
+
+''Use docker in VScode (in ssh config):''
+
+```
+Host src
+  HostName 127.0.0.1//本地做跳转
+  ProxyJump zhangkunlong@10.227.4.232
+  User root
+  Port 30001//跳转端口
+```

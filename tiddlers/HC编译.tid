@@ -1,0 +1,29 @@
+created: 20220222071229792
+creator: Roy Zheng
+modified: 20220222072832158
+modifier: Roy Zheng
+tags: Index
+title: HC编译
+tmap.id: e9104c9a-45cf-43ff-83f8-c285147eacd7
+type: text/vnd.tiddlywiki
+
+```
+//make read_bam
+cd my_htslib
+autoheader
+autoconf
+./configure --disable-bz2 --disable-gcs --disable-s3 --disable-lzma --disable-libcurl
+make read_bam
+cp libread_bam.so ../src
+
+//make libapply.a
+cd src/haplotypecaller/apply/
+source /opt/rh/devtoolset-9/enable
+
+//make gatk-hc
+cd src/
+make
+```
+
+
+
