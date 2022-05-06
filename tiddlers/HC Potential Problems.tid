@@ -1,0 +1,16 @@
+created: 20220428021029652
+creator: Roy Zheng
+modified: 20220429105648579
+modifier: Roy Zheng
+tags: Index
+title: HC Potential Problems
+tmap.id: 7f5e7e12-9738-44fa-bb2e-cdb6a0ddb39c
+type: text/vnd.tiddlywiki
+
+0428（已解决）: alignmentStartHapwrtRef 目前 = 0，才能让get_variation_events() 中需要的EventMap正确建立。但本不应该是0：组装传进来的是1w+的一个很大的值，实际GATK中是500或600左右。
+
+0429： assignGenotypeLikelihoods 中关于haplotypes的问题：应该用trimmed_haplotypes, 但现在使用的是original_haplotypes。改为trimmed之后程序跑不过。
+
+0429： calculate_ref_confidence中关于region的使用。目前使用的haplotypes是原始hap，但region用的都是variant_region，二者不匹配。是否应该使用trim之后的hap？
+
+0429： getVariationEvents 在区间10381-10529现在只能找到一个变异（应该是三个），初步判断是getAllVariantContexts函数中，p_vc都能找到，但无法存到allVariants这个set中。
