@@ -1,6 +1,6 @@
 created: 20220222071931335
 creator: Roy Zheng
-modified: 20220222080056662
+modified: 20220506063503137
 modifier: Roy Zheng
 page-cover: 
 tags: Index
@@ -23,7 +23,15 @@ docker run --runtime=nvidia -itd --name hc-zqw --privileged=true -p 3000x:22 -v 
 ```
 Host src
   HostName 127.0.0.1//本地做跳转
-  ProxyJump zhangkunlong@10.227.4.232
+  ProxyJump zhengqiwen@10.227.4.232
   User root
-  Port 30001//跳转端口
+  Port 30003//跳转端口
 ```
+
+''Docker 终止后重新启动''
+
+docker container start ddb9a
+
+''Docker 无法使用vscode ssh远程连接''
+
+参考https://blog.csdn.net/TracelessLe/article/details/119060513 重置docker的ssh设置。
