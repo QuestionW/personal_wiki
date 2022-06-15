@@ -1,6 +1,6 @@
 created: 20220222080555684
 creator: Roy Zheng
-modified: 20220329064318222
+modified: 20220512074708093
 modifier: Roy Zheng
 tags: Index
 title: Git相关
@@ -26,4 +26,8 @@ git push origin :xxxxx
 ''合并分支（A作为主分支，将B分支的change merge到A）：''
 
 git checkout A #切换到A分支
+
 git merge B #将B合并到A中
+
+''撤销commit''
+
